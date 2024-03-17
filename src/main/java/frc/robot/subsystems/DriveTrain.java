@@ -37,7 +37,8 @@ public class DriveTrain extends SubsystemBase {
     m_leftFollower.follow(m_leftMaster);
     m_rightFollower.follow(m_rightMaster);
 
-
+    m_leftMaster.config_kP(0, kP);
+    m_rightMaster.config_kP(0, kP);
 
   }
 

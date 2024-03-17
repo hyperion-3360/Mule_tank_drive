@@ -40,8 +40,8 @@ public class RobotContainer {
     // Drive train default is arcade drive
     m_driveTrain.setDefaultCommand(new RunCommand(() -> {
       // Controller y axis is positive right, but z rotation is NWU (positive left)
-      double x = m_controller.getLeftY();
-      double z = -m_controller.getRightX();
+      double x = m_controller.getRightTriggerAxis() - m_controller.getLeftTriggerAxis();
+      double z = m_controller.getLeftX();
       m_driveTrain.driveArcade(x, z, true);
     }, m_driveTrain));
 
